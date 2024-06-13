@@ -27,6 +27,12 @@ const Playlist: React.FC<{ searchQuery: string }> = ({ searchQuery }) => {
     setSelectedSong(null);
   };
 
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      handleClose();
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -56,8 +62,14 @@ const Playlist: React.FC<{ searchQuery: string }> = ({ searchQuery }) => {
       </div>
 
       {selectedSong && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center">
-          <div className="bg-white p-4 rounded-lg shadow-lg relative max-w-md w-full text-center playlist-modal">
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center"
+          onClick={handleOverlayClick}
+        >
+          <div
+            className="bg-white p-4 rounded-lg shadow-lg relative max-w-md w-full text-center playlist-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={handleClose}
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 playlist-modal-close text-3xl"
