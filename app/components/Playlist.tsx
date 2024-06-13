@@ -2,16 +2,24 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { songs } from "@/app/data/songs.json";
+import * as songsData from "@/app/data/songs.json"; // Adjust the path as needed
+
+type Song = {
+  title: string;
+  cover: string;
+  song: string;
+};
 
 const Playlist: React.FC<{ searchQuery: string }> = ({ searchQuery }) => {
-  const [selectedSong, setSelectedSong] = useState(null);
+  const [selectedSong, setSelectedSong] = useState<Song | null>(null);
 
-  const filteredSongs = songs.filter((song) =>
+  const songs: Song[] = (songsData as any).default;
+
+  const filteredSongs = songs.filter((song: Song) =>
     song.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const handleCardClick = (song) => {
+  const handleCardClick = (song: Song) => {
     setSelectedSong(song);
   };
 
@@ -22,7 +30,7 @@ const Playlist: React.FC<{ searchQuery: string }> = ({ searchQuery }) => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {filteredSongs.map((song, index) => (
+        {filteredSongs.map((song: Song, index: number) => (
           <div
             key={index}
             className="playlist-card bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105 relative"
