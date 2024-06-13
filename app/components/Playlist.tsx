@@ -33,7 +33,7 @@ const Playlist: React.FC<{ searchQuery: string }> = ({ searchQuery }) => {
         {filteredSongs.map((song: Song, index: number) => (
           <div
             key={index}
-            className="playlist-card bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105 relative"
+            className="playlist-card relative bg-white bg-opacity-30 backdrop-blur-md shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
             onClick={() => handleCardClick(song)}
           >
             <div className="relative h-64 overflow-hidden rounded-t-lg">
@@ -47,7 +47,7 @@ const Playlist: React.FC<{ searchQuery: string }> = ({ searchQuery }) => {
               />
             </div>
             <div className="p-4 text-center">
-              <h2 className="text-lg font-semibold mb-2 text-gray-800 truncate">
+              <h2 className="text-lg font-semibold mb-2 text-white truncate">
                 {song.title}
               </h2>
             </div>
@@ -60,7 +60,7 @@ const Playlist: React.FC<{ searchQuery: string }> = ({ searchQuery }) => {
           <div className="bg-white p-4 rounded-lg shadow-lg relative max-w-md w-full text-center playlist-modal">
             <button
               onClick={handleClose}
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 playlist-modal-close"
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 playlist-modal-close text-3xl"
             >
               &times;
             </button>
