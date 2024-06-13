@@ -1,0 +1,29 @@
+{
+    "songs": [
+        {
+            "song": "/music/EVERYTHING.mp3",
+            "cover": "/images/everything.jpeg",
+            "title": "EVERYTHING"
+        },
+        {
+            "song": "/music/Hi Bye, Goodnight.mp3",
+            "cover": "/images/hi.jpeg",
+            "title": "Hi Bye, Goodnight"
+        },
+        {
+            "song": "/music/천년지애 Everlasting Love.mp3",
+            "cover": "/images/LEEHEESANG.jpg",
+            "title": "천년지애 Everlasting Love"
+        },
+        {
+            "song": "/music/이희상 (LEEHEESANG) - 애열 (Love Shine).mp3",
+            "cover": "/images/love shine.jpeg",
+            "title": "애열 (Love Shine)"
+        },
+        {
+            "song": "/music/은방울 Lily of The Valley.mp3",
+            "cover": "/images/lily.jpeg",
+            "title": "은방울 Lily of The Valley"
+        }
+    ]
+}

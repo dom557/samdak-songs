@@ -1,5 +1,4 @@
-// components/Button.tsx
-import React from 'react';
+import React from "react";
 
 interface ButtonProps {
   onClick: () => void;
